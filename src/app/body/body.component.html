@@ -1,0 +1,6 @@
+<p>body works!</p>
+<div *ngFor="let aluno of message">
+    <p [ngStyle]="{'background-color': isBackgroundColor}" [ngClass]="{'isElian': aluno == 'Elian'}">{{aluno}}</p>
+</div>
+
+<button *ngIf="!isSendMessage" (click)="sendMessage()">Enviar</button>
