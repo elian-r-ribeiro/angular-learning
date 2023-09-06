@@ -1,6 +1,7 @@
-<p>body works!</p>
+<!-- Percorrendo array através do NgFor-->
 <div *ngFor="let aluno of message">
-    <p [ngStyle]="{'background-color': isBackgroundColor}" [ngClass]="{'isElian': aluno == 'Elian'}">{{aluno}}</p>
+  <p>{{ aluno }}</p>
 </div>
 
-<button *ngIf="!isSendMessage" (click)="sendMessage()">Enviar</button>
+<!-- Acionando função para enviar dados para o componente pai -->
+<button (click)="sendMessage()">Enviar</button>

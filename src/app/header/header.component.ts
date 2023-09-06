@@ -1,5 +1,6 @@
+import { Router } from '@angular/router';
+import { ContadorService } from './../service/contador.service';
 import { Component } from '@angular/core';
-import { ContadorService } from '../service/contador.service';
 
 @Component({
   selector: 'app-header',
@@ -7,13 +8,29 @@ import { ContadorService } from '../service/contador.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  public users : string[] = [];
-  constructor(private contadorService : ContadorService){
-    this.getUsers();
-    console.log(this.users);
+  public users!: string[];
+  constructor(
+    private contadorService: ContadorService,
+    private router: Router
+    )
+    {
+      this.getUsers();
+      console.log(this.users);
   }
 
-  getUsers(){
+  getUsers() {
     this.users = this.contadorService.getUsers();
+  }
+
+  goToHome() {
+    this.router.navigate(['/']);
+  }
+
+  goToAbout(id: number) {
+    this.router.navigate(['/about', id]);
+  }
+
+  goToContact(id: number) {
+    this.router.navigate(['/contact', id]);
   }
 }

@@ -4,17 +4,21 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ContadorService {
-  public array: string[] = [];
-  
-  constructor() { }
+  public array!: string[];
 
-  public addUser(user : string){
+  constructor() {
+    this.array = [];
+  }
+
+  public addUser(user: string) {
     return this.array.push(user);
   }
 
-  public removeUser(user : string){}
+  public removeUser(user: string) {
+    //Remover array
+  }
 
-  public getUsers(){
+  public getUsers() {
     return this.array;
   }
 }

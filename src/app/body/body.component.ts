@@ -7,18 +7,20 @@ import { ContadorService } from '../service/contador.service';
   styleUrls: ['./body.component.css']
 })
 export class BodyComponent {
+  /** Input - Recebendo Informação do componente pai */
   @Input() message!: string[];
+  /** Output - Criando um event emitter para enviar informação
+   * para o componente pai */
   @Output() messageEvent = new EventEmitter<string>();
-  isSendMessage!: boolean;
-  isBackgroundColor = 'blue';
 
-  constructor(private contadorService : ContadorService){
+  constructor(private contadorService: ContadorService) {
     console.log(this.message);
   }
 
-  sendMessage(){  
-    this.messageEvent.emit('Passando valor para pai');
+  /** Metódo para enviar informaçoes para o pai */
+  sendMessage() {
     this.contadorService.addUser('Matheus');
     this.contadorService.addUser('Anderson');
+    this.messageEvent.emit('Passando valor para pai');
   }
 }

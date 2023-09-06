@@ -1,5 +1,9 @@
+<!-- Componente header -->
 <app-header></app-header>
-<app-body [message]="alunos" (messageEvent)="receiveMessage($event)"></app-body>
-<h1>{{title}}</h1>
-<h1>{{message}}</h1>
+
+<router-outlet></router-outlet>
+
+<!-- Componente de Rodapé -->
 <app-footer></app-footer>
+
+<app-login></app-login>

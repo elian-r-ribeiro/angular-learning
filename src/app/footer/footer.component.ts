@@ -7,12 +7,15 @@ import { ContadorService } from '../service/contador.service';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
-  constructor(private contadorService : ContadorService){
-    this.createUser();
+
+  constructor(
+    private contadorService: ContadorService)
+    {
+      this.createUser();
   }
 
-  createUser(){
-    this.contadorService.addUser('Cristian');
+  createUser() {
+    this.contadorService.addUser('Cristian')
     this.contadorService.addUser('Marina');
   }
 }
